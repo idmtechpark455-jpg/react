@@ -14,7 +14,7 @@ export default function Form() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:2005/geted").then((res) => {
+        axios.get("https://backend-5y8z.onrender.com/geted").then((res) => {
             setGeted(res.data.data)
             console.log(res.data.data)
         }).catch((err) => {
@@ -32,7 +32,7 @@ export default function Form() {
         }
         console.log(email, pass, con)
         let payload = { Name: name, Email: email, Password: pass, Age: con }
-        axios.post("http://localhost:2005/signup", payload).then((res) => {
+        axios.post("https://backend-5y8z.onrender.com/signup", payload).then((res) => {
             setData(res.data.data)
             console.log(res.data.data)
         }).catch((err) => {
@@ -50,7 +50,7 @@ export default function Form() {
         let name = prompt("Enter the Name to upadted")
         let age = Number(prompt("Enter the age"))
         let payload= {Name:name,Age:age}
-        axios.put(`http://localhost:2005/up/${id}`,payload).then((res)=>{
+        axios.put(`https://backend-5y8z.onrender.com/up/${id}`,payload).then((res)=>{
             setData(res.data.data)
             console.log(res.data.data)
         }).catch((err)=>{
@@ -60,7 +60,7 @@ export default function Form() {
     }
 
     function dell(id){
-        axios.delete(`http://localhost:2005/del/${id}`).then((res)=>{
+        axios.delete(`https://backend-5y8z.onrender.com/${id}`).then((res)=>{
             setData(res.data.data)
             console.log(res.data.data)
         }).catch((err)=>{
